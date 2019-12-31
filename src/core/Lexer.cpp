@@ -10,7 +10,7 @@ Lexer::~Lexer(){};
 
 // Add multiple 
 Lexer::Lexer(char const * code){
-    Input input(code);
+    Reader input(code);
     this->input = input;
 
     logComparisons = log;

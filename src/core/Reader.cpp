@@ -1,12 +1,12 @@
-#include "Input.h"
+#include "Reader.h"
 #include <iostream>
 
 using namespace std;
 
-Input::Input(){}
-Input::~Input(){}
+Reader::Reader(){}
+Reader::~Reader(){}
 
-Input::Input(char const * inputText){
+Reader::Reader(char const * inputText){
     this->inputText = inputText;
     current = ' ';
     index = 0;
@@ -18,22 +18,22 @@ Input::Input(char const * inputText){
     size = strlen(inputText);
 }
 
-char Input::peek(){
+char Reader::peek(){
     current = inputText[index];
     
     return current;
 }
 
-char Input::advance(){
+char Reader::advance(){
     if(current == '\n'){
         line++;
         cursor = 0;
     }else cursor++;
-    
+
     index++;
     return peek();
 }
 
-bool Input::end(){
+bool Reader::end(){
     return index >= size;
 }

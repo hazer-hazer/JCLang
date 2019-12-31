@@ -1,5 +1,5 @@
-#ifndef INPUT_H
-#define INPUT_H
+#ifndef READER_H
+#define READER_H
 
 #include <stdlib.h>
 #include <iostream>
@@ -9,7 +9,7 @@ using std::string;
 using std::to_string;
 using std::cerr;
 
-class Input{
+class Reader{
     private:
         char const * inputText;
         char current;
@@ -22,9 +22,9 @@ class Input{
         int cursor;
 
     public:
-        Input();
-        Input(char const * inputText);
-        virtual ~Input();
+        Reader();
+        Reader(char const * inputText);
+        virtual ~Reader();
 
         char peek();
         char advance();

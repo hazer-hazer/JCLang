@@ -1,7 +1,7 @@
 # Jacy the Programming Language
 
-## TODO
-### FUTURE
+### Reader
+Reader operates with code text.
+Provides functions to go through code and stores line-cursor values.
 
-### Types
-- Add "double" support
+### Lexer

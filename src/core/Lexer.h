@@ -1,7 +1,7 @@
 #ifndef LEXER_H
 #define LEXER_H
 
-#include "Input.h"
+#include "Reader.h"
 #include "token.h"
 
 #include <vector>
@@ -20,7 +20,7 @@ class Lexer{
             input.error(text, fatal);
         }
     
-        Input input;
+        Reader input;
         vector <token> tokens;
 
         void add_token(token t);
@@ -56,7 +56,7 @@ class Lexer{
         // Debug
         bool const log = false; // If false - all logs will be set to false
         bool logComparisons = log;
-        
+
     public:
         Lexer();
         Lexer(char const * code);
