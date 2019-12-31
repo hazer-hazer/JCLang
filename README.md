@@ -1,6 +1,7 @@
-# TODO
+# Jacy the Programming Language
 
-# FUTURE
+## TODO
+### FUTURE
 
 ### Types
 - Add "double" support
