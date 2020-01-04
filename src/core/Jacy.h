@@ -1,15 +1,18 @@
 #ifndef JACY_H
 #define JACY_H
 
-#include "Lexer.h"
+#include "Importer.h"
 
 class Jacy{
+    private:
+        char const * entryFile;
 
     public:
-        Jacy();
+        Jacy(char const * entryFile);
         virtual ~Jacy();
 
-        void test(char const * code);
+        void test();
+        void type_test();
 };
 
 #endif

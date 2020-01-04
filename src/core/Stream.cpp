@@ -1,12 +1,12 @@
-#include "Reader.h"
+#include "Stream.h"
 #include <iostream>
 
 using namespace std;
 
-Reader::Reader(){}
-Reader::~Reader(){}
+Stream::Stream(){}
+Stream::~Stream(){}
 
-Reader::Reader(char const * inputText){
+Stream::Stream(char const * inputText){
     this->inputText = inputText;
     current = ' ';
     index = 0;
@@ -18,13 +18,13 @@ Reader::Reader(char const * inputText){
     size = strlen(inputText);
 }
 
-char Reader::peek(){
+char Stream::peek(){
     current = inputText[index];
     
     return current;
 }
 
-char Reader::advance(){
+char Stream::advance(){
     if(current == '\n'){
         line++;
         cursor = 0;
@@ -34,6 +34,6 @@ char Reader::advance(){
     return peek();
 }
 
-bool Reader::end(){
+bool Stream::end(){
     return index >= size;
 }

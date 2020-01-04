@@ -1,11 +1,9 @@
 #include "core/Jacy.h"
 
-char const * code = "8.1234 + 123 = 123";
-
 int main(int argc, char const *argv[]){
-    Jacy jacy;
+    Jacy jacy(argv[1]);
 
-    jacy.test(code);
+    jacy.type_test();
 
     return 0;
 }

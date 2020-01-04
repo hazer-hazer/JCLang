@@ -1,5 +1,5 @@
-#ifndef READER_H
-#define READER_H
+#ifndef STREAM_H
+#define STREAM_H
 
 #include <stdlib.h>
 #include <iostream>
@@ -8,8 +8,9 @@
 using std::string;
 using std::to_string;
 using std::cerr;
+using std::endl;
 
-class Reader{
+class Stream{
     private:
         char const * inputText;
         char current;
@@ -22,9 +23,9 @@ class Reader{
         int cursor;
 
     public:
-        Reader();
-        Reader(char const * inputText);
-        virtual ~Reader();
+        Stream();
+        Stream(char const * inputText);
+        virtual ~Stream();
 
         char peek();
         char advance();
@@ -37,8 +38,8 @@ class Reader{
         // Show error with line and cursor position
         // TODO: Add start benchmark
         void error(string message, bool fatal = 0){
-            cerr << "ERROR Occured\n";
-            cerr << "[INPUT]["+ to_string(line) +":"+ to_string(cursor) +"]"+ message << message << '\n';
+            cerr << "ERROR Occured" << endl;
+            cerr << "[INPUT]["+ to_string(line) +":"+ to_string(cursor) +"]"+ message << message << endl;
 
             if(fatal) exit(EXIT_FAILURE);
         }
